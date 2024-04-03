@@ -24,6 +24,9 @@ npm install
 # Start the development server
 npm run dev
 
+# URL (Other URL's won't work)
+http://localhost:5173/
+
 # Route paths are 
 /, /profile
 
