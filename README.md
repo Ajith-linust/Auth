@@ -13,7 +13,7 @@ To install and run the project, follow these steps:
 
 ```bash
 # Clone the repository
-git clone https://github.com/Ajith-linust/Auth-Css.git
+git clone https://github.com/Ajith-linust/Auth.git
 
 # Navigate to the project directory
 cd your-project-name
