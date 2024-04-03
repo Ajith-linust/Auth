@@ -11,10 +11,6 @@ const Profile = () => {
   const { email, given_name, nickname, family_name, picture, updated_at } =
     useSelector((state: RootState) => state.auth.user);
 
-  const user = useSelector((state: RootState) => state.auth.user);
-
-  console.log("user ", user);
-
   if (email.length === 0)
     return (
       <Link to={"/"}>
