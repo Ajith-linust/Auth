@@ -8,14 +8,17 @@ import { useAuth0 } from "@auth0/auth0-react";
 const Profile = () => {
   const { logout } = useAuth0();
 
-  const { email, given_name, family_name, picture, updated_at } = useSelector(
-    (state: RootState) => state.auth.user
-  );
+  const { email, given_name, nickname, family_name, picture, updated_at } =
+    useSelector((state: RootState) => state.auth.user);
 
-  if (given_name.length === 0)
+  const user = useSelector((state: RootState) => state.auth.user);
+
+  console.log("user ", user);
+
+  if (email.length === 0)
     return (
       <Link to={"/"}>
-        <Button>Please Login</Button>
+        <Button>Please </Button>
       </Link>
     );
 
@@ -54,11 +57,19 @@ const Profile = () => {
           </div>
 
           <div className="mt-8 ">
-            <h2 className="text-white font-bold text-2xl tracking-wide">
-              {given_name} <br /> {family_name}
+            <h2 className="text-white font-bold text-2xl tracking-wide break-words max-w-full">
+              {given_name ? (
+                <>
+                  {given_name} <br /> {family_name}
+                </>
+              ) : (
+                nickname
+              )}
             </h2>
           </div>
-          <p className="text-emerald-400 font-semibold mt-2.5">{email}</p>
+          <p className="text-emerald-400 font-semibold mt-2.5 break-words max-w-full">
+            {email}
+          </p>
         </section>
       </section>
 
